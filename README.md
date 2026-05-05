@@ -87,11 +87,15 @@ Later, if needed, we can:
 
 ## Status
 
-- Repo initialised locally; no external remotes configured yet.
-- Skeleton layout and design captured here; code in `rag/` to be added next.
+- Repo live on GitHub at `fairflow/murtwell-rag`.
+- Core implementation in place: `rag/config.py`, `rag/ingest.py`, `rag/query.py`, `rag/server.py`.
+- Notebooks ready under `notebooks/`.
 
-Once this repo is pushed to GitHub, we can start with:
+### Next steps
 
-1. Adding `rag/config.py`, `rag/ingest.py`, and `rag/query.py` based on the current design.
-2. Dropping a couple of exemplar documents (e.g. NPPF PDF + one local plan) into `data/raw/`.
-3. Running a first ingest + query end-to-end.
+1. Copy a `.env` from `.env.example` and add your `OPENAI_API_KEY`.
+2. `pip install -r requirements.txt`
+3. Drop documents (e.g. NPPF PDF, a local plan) into `data/raw/national/` or `data/raw/local/`.
+4. Run ingest: `python -m rag.ingest`
+5. Ask a question: `python -m rag.query "What does the NPPF say about green belt?"`
+6. (Optional) Start the API: `uvicorn rag.server:app --reload`

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+data/processed/chroma/
+*.egg-info/
+.DS_Store
