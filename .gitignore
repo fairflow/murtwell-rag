@@ -6,3 +6,4 @@ venv/
 data/processed/chroma/
 *.egg-info/
 .DS_Store
+.claude/secrets.toml
